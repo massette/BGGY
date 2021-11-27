@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+// https://markoskon.com/yargs-examples/#commands-and-options
+
+require("yargs")(process.argv.slice(2))
+.command(require("./bggy.js"))
+.command(require("./bggy-add.js"))
+.option("list", {
+	alias: "l",
+	describe: "List all sources.",
+	type: "boolean",
+}).parse();
